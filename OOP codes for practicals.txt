@@ -1,0 +1,164 @@
+pr-1 write programs to evaluate any expression using input\output function
+
+#include<iostream>
+using namespace std;
+int main()
+{int x,y,z;
+cout<<"enter value of x and Y :"<<endl;
+cin>>x>>y;
+z=x*y;
+cout<<"multiplication of x and y is :"<<z;
+}
+-----------------------------------------------------------------
+pr-2 write programs using
+     *scope resolution operator
+     *memory management operator
+     *manipulator
+
+#include<iostream>
+using namespace std;
+class demo
+{
+public:
+void display();
+};
+void demo::display()
+{cout<<"function body written outside the class"<<endl;
+}
+int main()
+{demo d;
+d.display();
+return 0;
+}
+------------------------------------------------------------------
+pr-5 write programs to define the function outside the class
+
+#include<iostream>
+using namespace std;
+class demo
+{
+public:
+void display();
+};
+void demo::display()
+{cout<<"function defined outside the class"<<endl;
+}
+int main()
+{demo d;
+d.display();
+return 0;
+}
+------------------------------------------------------------------
+pr-6 write programs to implement inline function
+#include <iostream>
+using namespace std;
+inline double calculateArea(double l, double b) {
+    return l*b;
+}
+int main() {
+    double l,b;
+    cout << "Enter the length of the rectangle: ";
+    cin >> l;
+    cout << "Enter the bredth of the rectangle: ";
+    cin >> b;
+    double area = calculateArea(l,b);
+    cout << "The area of the rectangle is: " << area << endl;
+    return 0;
+}
+-----------------------------------------------------------------
+pr-8 write programs to implement
+     *static data member
+     *static member function
+
+#include<iostream>
+using namespace std;
+class demo
+{static int count;
+public:
+	static void display()
+	{cout<<"\ncount is "<<count;
+	}
+};
+int demo::count;
+int main()
+{demo d1;          //calling using object
+d1.display();      //calling using calss name
+demo::display();
+return 0;
+}
+--------------------------------------------------------------
+pr-9 write programs to create array of object
+
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class staff
+{char name[10],
+      post[10];
+public:
+	void get()
+	{
+	cout<<"enter staff name and post"<<endl;
+	cin>>name>>post;
+	}
+	void put()
+	{
+	cout<<"name of staff ="<<name<<endl;
+	cout<<"name of post ="<<post<<endl;	
+	}
+};
+int main()
+{staff s[5];
+int i;
+for(i=0;i<=4;i++)
+{s[i].get();
+}
+for(i=0;i<=4;i++)
+{s[i].put();
+}
+getch();
+}
+------------------------------------------------------------
+pr-10   write programs for 
+     *default constructor 
+     *parameterized constructor 
+     *copy constructor 
+     *multiple constructor in one class 
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class integer
+{int m,n;
+public:
+	integer()
+	{
+		m=0;
+		n=0;
+	}
+	integer(int a,int b)
+	{
+		m=a;
+		n=b;
+	}
+	integer(integer &i)
+	{
+		m=i.m;
+		n=i.n;
+	}
+	void display()
+	{cout<<"\nm="<<m<<endl;
+	 cout<<"n="<<n<<endl;
+	}
+};
+int main()
+{integer i1;
+integer i2(10,20);
+integer i3(i2);
+cout<<"\nobject i1";
+i1.display();
+cout<<"\nobject i2";
+i2.display();
+cout<<"\nobject i3";
+i3.display();
+getch();
+}
